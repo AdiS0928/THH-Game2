@@ -1,0 +1,87 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: rgb(140,228,252);
+    background: linear-gradient(90deg, rgba(140,228,252,1) 0%, rgba(70,211,251,1) 35%, rgba(4,164,209,1) 100%);  
+}
+
+
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+  }
+
+  .container1{
+    height: 683px;
+    width: 1132px;
+    border: solid;
+    border-width: 20px;
+    border-image: linear-gradient(to right, #FFCF07, #FE8116) 1;
+    background: rgb(40, 219, 219);
+  }
+  
+  
+  .cardcontent{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    */
+    justify-content: space-around;
+    height: 70%;
+    align-items: center; 
+  }
+  
+  .head{
+    font-family: 'Ara Aqeeq';
+    font-size: 5rem;
+  
+    color: red;
+  }
+  
+  .txt{
+    color: white;
+    font-family: 'Ara Aqeeq';
+  }
+  
+  .txt2{
+    color: white;
+    font-family: 'Ara Aqeeq';
+    font-size: 1.5rem;
+  }
+  
+  .input{
+    border-radius: 20px;
+    border-width: 0;
+    height: 3rem;
+    width: 35rem;
+    font-family: 'Ara Aqeeq';
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    color: rgb(66, 101, 197);
+  }
+
+  .card-button{
+    height: 3rem;
+    width: 15rem;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, #FBF2FF 0%, #DC86FA 0%, #C030ED 100%);
+    border-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     
+  }
+  
+  .card-button:hover{
+    cursor: pointer;
+  }
+  
+  

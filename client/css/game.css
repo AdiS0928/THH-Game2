@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Ara Aqeeq';
+    src: url('/fonts/ara/ara_aqeeq_bold-webfont.woff2') format('woff2'),
+         url('/fonts/ara/ara_aqeeq_bold-webfont.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'lilita_oneregular';
+    src: url('/fonts/lilitaone/lilitaone-regular_0-webfont.woff2') format('woff2'),
+         url('/fonts/lilitaone/lilitaone-regular_0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+
+body{
+    background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%);
+}
+.game{
+   
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    display: flex;
+
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 90px;
+}
+
+.scorecontain{
+    width: 6rem;
+    height: 3rem;
+    background: rgb(29, 175, 175);
+text-align: center;
+    border-radius: 12px;
+    
+}
+
+.score{
+    color: white;
+    opacity: 1;
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Ara Aqeeq';
+
+}
+
+.scorecanvas{
+    height: 500px;
+    width: 624px;
+    border: solid;
+    border-width: 20px;
+    border-image: linear-gradient(to right, #FFCF07, #FE8116) 1;
+    margin: auto;
+    margin-top: 90px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.txt{
+    color: white;
+    padding-top: 220px;
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Ara Aqeeq';
+    width: 420px;
+    flex:80%;
+}
+
+.txt2{
+
+    font-size: 5rem;;
+    color: red;
+    margin:0;
+    font-family: 'Ara Aqeeq';
+    width: 420px;
+    flex:20%;
+    padding-left: 208px;
+}
+
+
+
+
+@media screen and (max-width: 1500px) {
+    .game{
+   
+        flex-direction: column;
+    
+    }
+    .body{
+        height: 100vh;
+        background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%);
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .game{
+   
+        flex-direction: column;
+    
+    }
+    .body{
+        height: 100vh;
+        background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%);
+    }
+}

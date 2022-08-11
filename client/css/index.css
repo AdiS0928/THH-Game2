@@ -1,0 +1,153 @@
+
+@font-face {
+  font-family: 'Ara Aqeeq';
+  src: url('/public/fonts/ara/ara_aqeeq_bold-webfont.woff2') format('woff2'),
+       url('/public/fonts/ara/ara_aqeeq_bold-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'lilita_oneregular';
+  src: url('/public/fonts/lilitaone/lilitaone-regular_0-webfont.woff2') format('woff2'),
+       url('/public/fonts/lilitaone/lilitaone-regular_0-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-image: rgb(140,228,252);
+    background: linear-gradient(90deg, rgba(140,228,252,1) 0%, rgba(70,211,251,1) 35%, rgba(4,164,209,1) 100%);
+    
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container1{
+  height: 683px;
+  width: 1132px;
+  border: solid;
+  border-width: 20px;
+  border-image: linear-gradient(to right, #FFCF07, #FE8116) 1;
+  background: rgb(40, 219, 219);
+}
+
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-wrap: wrap;
+  
+}
+
+
+.head{
+  font-family: 'Ara Aqeeq';
+  font-size: 8rem;;
+  color: red;
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-button{
+  height: 3rem;
+  width: 15rem;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, #FBF2FF 0%, #DC86FA 0%, #C030ED 100%);
+  border-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+
+.card-button:hover{
+  cursor: pointer;
+}
+.btn-txt{
+  color: white;
+  font-family: 'Ara Aqeeq';
+  font-size: 1.5rem;
+}
+
+.yellow{
+  width: 150px;
+  height: 130px;
+  transform: rotate(69deg);
+}
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contain{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.yellow2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.yellow3{
+  width: 150px;
+  height: 130px;
+  transform: rotate(-69deg);
+}
+
+.yellow4{
+  width: 150px;
+  height: 130px;
+  transform: rotate(20deg);
+}
+
+/* @media only screen and (max-width: 768px) {
+
+
+
+   .container1{
+    height: 100%;
+     width: 20vh;
+   }
+
+   .home{
+    height: 100%;
+    width: 100%;
+  }
+
+    .head{
+    font-size: 4rem;
+ } 
+
+
+} */
+
+td {
+  color: white;
+  font-family: 'Ara Aqeeq';
+}
