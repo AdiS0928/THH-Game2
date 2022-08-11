@@ -2,7 +2,7 @@
 <html>
     <head>
       <link rel="stylesheet" href="css/game.css">
-      
+      <script src="js/headbreaker.js"></script> 
     </head>
     <body>
       
@@ -42,8 +42,17 @@
       </div>
         <script>
           // ...and a script with the following code:
+          const rand = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+
+          var art = "";
+          if(rand == 1){
+            art = "Artwork1.jpg";
+          }
+          else{
+            art = "Artwork2.jpg"
+          }
           let dali = new Image();
-          dali.src = 'static/Artwork1.jpg';
+          dali.src = 'static/'+art;
           dali.onload = () => {
             const offstage = new headbreaker.Canvas('my-canvas', { width: 1000, height: 500,
     pieceSize: {x: 125, y: 125}, proximity: 9, strokeWidth: 1.5,
@@ -70,14 +79,12 @@
     element.style.visibility = 'visible';
 
     var input = document.getElementById("s"); //Select your button element
-    input.setAttribute("value",24); //Set value attribute to your element
+    input.setAttribute("value",time); //Set value attribute to your element
     
   })
 
           }
-        </script>
 
-<script>
     var time = 60;
     var i = 0;
     var c = null;
@@ -112,11 +119,10 @@
   // }
 
   // counter();
-  
+        </script>
 
 
-</script>
-<script src="js/headbreaker.js"></script> 
+
 
 <style> .form-group { margin-top: 15px; } #responsive-canvas .konvajs-content canvas, #offstage-canvas .konvajs-content canvas { border: solid !important; } #validated-canvas-overlay { position:absolute; left:0; top: 0; margin: 0; padding: 0; opacity: 0; pointer-events: none; transition: opacity 1s ease-in-out; } #validated-canvas-overlay.active { opacity: 1; } </style>
 

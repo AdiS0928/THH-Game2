@@ -15,7 +15,7 @@ require("./db/server");
 
 const moviesSchema = {
     User: String,
-    Score: String
+    Score: Number
 }
 
 var name = "";
@@ -55,7 +55,7 @@ app.post("/game",(req,res) =>{
 app.post("/leaderboard-post",async (req,res) =>{
 
     console.log(name)
-    const doc = await Movie.findByIdAndUpdate({_id:name}, {$set: {Score:20}});
+    const doc = await Movie.findByIdAndUpdate({_id:name}, {$set: {Score: 20}});
     res.redirect('/l')    
 })
 
@@ -67,7 +67,7 @@ app.get("/l",(req,res) =>{
         res.render('leaderboard', {
             moviesList: movies
         })
-    })
+    }).sort({Score : -1}).limit(5);
 })
 
 
