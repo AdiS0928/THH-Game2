@@ -12,13 +12,27 @@
         </div> -->
         <div class="game">
           <div class= "left">
+            <form action="/leaderboard-post" method="POST">
+              <div>
               <div class="scorecontain">
                   <p class="score" id="time"></p>
+                  <input type="hidden" value="12" id="s" name="s"></input>
               </div>
+              <div class="mobtxt">
+              <p >Complete the puzzle before the time runs out!</p>
+            </div>
+            </div>
 
-              <div class="scorecanvas" id="my-canvas">
+              <div class="scorecanvas" id="my-canvas" onmousedown="start()" ontouchstart="start()">
 
               </div>
+              <div class="Results" >
+                
+                  <button class="scorebutton" id="time" type="submit">
+                      SEE RESULTS!
+                  </button>
+              </div>
+            </form>
           </div>
 
           <div class= "right">
@@ -32,7 +46,7 @@
           dali.src = 'static/Artwork1.jpg';
           dali.onload = () => {
             const offstage = new headbreaker.Canvas('my-canvas', { width: 1000, height: 500,
-    pieceSize: {x: 125, y: 125}, proximity: 5, strokeWidth: 1.5,
+    pieceSize: {x: 125, y: 125}, proximity: 9, strokeWidth: 1.5,
     lineSoftness: 0.18, image: dali,
     // ... more configs ...
     preventOffstageDrag: true,
@@ -51,7 +65,13 @@
 
   offstage.attachSolvedValidator();
   offstage.onValid(() => {
-    console.log("SOLVED!")
+    console.log("SOLVED!");
+    const element = document.querySelector('.Results');
+    element.style.visibility = 'visible';
+
+    var input = document.getElementById("s"); //Select your button element
+    input.setAttribute("value",24); //Set value attribute to your element
+    
   })
 
           }
@@ -59,6 +79,8 @@
 
 <script>
     var time = 60;
+    var i = 0;
+    var c = null;
     document.getElementById("time").innerHTML ="1:00";
     
     function count (){
@@ -69,7 +91,13 @@
         clearInterval(c);
       }
     }
-    var c = setInterval(count,1000);
+
+    function start(){
+      if(i==0){
+      c = setInterval(count,1000);
+      i++;
+      }
+    }
 
 
     
