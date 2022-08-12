@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="css/leaderboardl.css">
+    </head>
+
+    <body>
+        <div class="back">
+
+                <div class="scorecontain">
+                    <p class="scorehead">AW,YOU DIDN’T COMPLETE THE
+
+                        PUZZLE IN TIME</p>
+                        <form action="/" method="get">
+                            <button class='card-button' type="submit">
+                            <span class="txt2"> PLAY AGAIN </span>
+                            </button>
+                        </form>
+                </div>
+
+
+            <div>
+                <table class="table">
+                    <tr>
+                        <td>Name</td>
+                        <td>Scores</td>
+                    </tr>
+                    
+                    <%moviesList.forEach(movie => {%>
+                        <tr>
+                            <td><%= movie.User %></td>
+                            <td><%= movie.Score %> </td>
+                        </tr>
+                    <%})%>
+
+                </table>
+            </div>
+            
+        </div>
+          
+    </body>
+</html>

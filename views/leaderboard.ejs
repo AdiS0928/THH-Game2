@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="css/leaderboard.css">
+    </head>
+
+    <body>
+        <div class="back">
+            <div>
+                <p class="nametxt"><%= usera %></p>
+                <p class="nametxt">NICE WORK,</p>
+            </div>
+
+                <div class="scorecontain">
+                    <p class="scorehead">YOUR SCORE</p>
+                    <p class="score"><%= scorea %></p>
+                </div>
+
+
+            <div>
+                <table class="table">
+                    <tr>
+                        <td>Name</td>
+                        <td>Scores</td>
+                    </tr>
+                    
+                    <%moviesList.forEach(movie => {%>
+                        <tr>
+                            <td><%= movie.User %></td>
+                            <td><%= movie.Score %> </td>
+                        </tr>
+                    <%})%>
+
+                </table>
+            </div>
+            <form action="/" method="get">
+            <button class='card-button' type="submit">
+            <span class="txt2"> PLAY AGAIN </span>
+            </button>
+        </form>
+        </div>
+          
+    </body>
+</html>

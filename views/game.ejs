@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="css/game.css">
+      <script src="js/headbreaker.js"></script> 
+    </head>
+    <body>
+      
+
+
+        <!-- <div id="my-canvas">
+        </div> -->
+        <div class="game">
+          <div class= "left">
+            <form action="/leader" id = "frm" method="POST">
+              <div>
+              <div class="scorecontain">
+                  <p class="score" id="time"></p>
+                  <input type="hidden" value="12" id="s" name="s"></input>
+              </div>
+              
+              <div class="mobtxt">
+              <p >Complete the puzzle before the time runs out!</p>
+            </div>
+            </div>
+            <div>
+            <button class="scorebuton"  type="submit" value="mobile" name="mobile">
+              SEE RESULTS!
+          </button>
+        </div>
+          <div class="rrr" id="dd">
+      </div>
+              <div class="scorecanvas" id="my-canvas" onmousedown="start()" ontouchstart="start()">
+
+              </div>
+  
+                
+                  <button class="scorebutton"  type="submit" value="Desk" name="Desk">
+                      SEE RESULTS!
+                  </button>
+
+            </form>
+          </div>
+
+          <div class= "right">
+             <p class="txt">Complete the puzzle before the time runs out!</p>
+             <p class="txt2">MAJID</p>
+          </div>
+      </div>
+        <script>
+          var time = 4;
+    var i = 0;
+    var c = null;
+    document.getElementById("time").innerHTML ="1:00";
+    
+    function count (){
+      time--;
+      document.getElementById("time").innerHTML = "00:" + time;
+      if(time < 10){
+        document.getElementById("time").innerHTML = "00:0" + time;
+      }
+      if(time === 0){
+        clearInterval(c);
+        
+        var w = window.innerWidth;
+        if(w<1000){
+        const element = document.querySelector('.scorebuton');
+        element.style.visibility = 'visible';
+        }
+        else{
+          const element = document.querySelector('.scorebutton');
+        element.style.visibility = 'visible';
+        }
+        document.getElementById("frm").setAttribute("method","get");
+        document.getElementById("frm").setAttribute("action","/leader-l");
+        
+      }
+    }
+
+    function start(){
+      if(i==0){
+      c = setInterval(count,1000);
+      i++;
+      }
+    }
+          // ...and a script with the following code:
+          const rand = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+
+          var art = "";
+          if(rand == 1){
+            art = "Artwork1.jpg";
+          }
+          else{
+            art = "Artwork2.jpg"
+          }
+          let dali = new Image();
+          dali.src = 'static/'+art;
+          dali.onload = () => {
+            const offstage = new headbreaker.Canvas('my-canvas', { width: 1500, height: 600,
+    pieceSize: {x: 125, y: 125}, proximity: 9, strokeWidth: 1.5,
+    lineSoftness: 0.18, image: dali,
+    // ... more configs ...
+    preventOffstageDrag: true,
+    outline: new headbreaker.outline.Rounded(),
+    fixed:true
+  });
+
+  offstage.adjustImagesToPuzzleHeight();
+  offstage.autogenerate({
+    horizontalPiecesCount: 5,
+    verticalPiecesCount: 4,
+    insertsGenerator: headbreaker.generators.flipflop
+  });
+
+  // ['resize', 'DOMContentLoaded'].forEach((event) => {
+  // window.addEventListener(event, () => {
+  //   var container = document.getElementById('my-canvas');
+  //   offstage.resize(container.offsetWidth, container.scrollHeight);
+  //   offstage.scale(container.offsetWidth / initialWidth);
+  //   offstage.redraw();
+  // });
+  var w = window.innerWidth;
+var h = window.innerHeight;
+ console.log(w,h)
+  if(w <= 1000){
+    offstage.resize(700,1200);
+  //   for(let i=0;i<20;i++){
+  //   const rand2 = Math.floor(Math.random() * (600 - 300 + 1)) + 300
+  //   00;
+  // const rand3 = Math.floor(Math.random() * (700 - 600 + 1)) + 600;
+  //   offstage.puzzle.pieces[i].translate(-100, rand2 - i*4);
+  // }
+  // offstage.puzzle.pieces[0].translate(-40, 610);
+  // offstage.puzzle.pieces[1].translate(-30, 520);
+  // offstage.puzzle.pieces[2].translate(-20, 530);
+  // offstage.puzzle.pieces[3].translate(-20, 540);
+  // offstage.puzzle.pieces[4].translate(-10, 650);
+  // offstage.puzzle.pieces[5].translate(-40, 410);
+  // offstage.puzzle.pieces[6].translate(-30, 420);
+  // offstage.puzzle.pieces[7].translate(-20, 430);
+  // offstage.puzzle.pieces[8].translate(-10, 450);
+  // offstage.puzzle.pieces[9].translate(-20, 440);
+  // offstage.puzzle.pieces[10].translate(-40, 460);
+  // offstage.puzzle.pieces[11].translate(-30, 230);
+  // offstage.puzzle.pieces[12].translate(-20, 220);
+  // offstage.puzzle.pieces[13].translate(-20, 240);
+  // offstage.puzzle.pieces[14].translate(-10, 250);
+  // offstage.puzzle.pieces[15].translate(-40, 260);
+  // offstage.puzzle.pieces[16].translate(-30, 150);
+  // offstage.puzzle.pieces[17].translate(-20, 130);
+  // offstage.puzzle.pieces[18].translate(-10, 120);
+  // offstage.puzzle.pieces[19].translate(-5, 150);
+  for(let i =0;i<5;i++){
+    let rand1 = Math.floor(Math.random() * (600 - 500 + 1)) + 500;
+    let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
+    offstage.puzzle.pieces[i].translate(-rand2, rand1);
+  }
+
+  for(let i =5;i<10;i++){
+    let rand1 = Math.floor(Math.random() * (540 - 500 + 1)) + 500;
+    let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
+    offstage.puzzle.pieces[i].translate(-rand2, rand1);
+  }
+
+  for(let i =10;i<15;i++){
+    let rand1 = Math.floor(Math.random() * (570 - 530 + 1)) + 530;
+    let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
+    offstage.puzzle.pieces[i].translate(-rand2, rand1);
+  }
+
+
+  for(let i =15;i<20;i++){
+    let rand1 = Math.floor(Math.random() * (500 - 400 + 1)) + 400;
+    let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
+    offstage.puzzle.pieces[i].translate(-rand2, rand1);
+  }
+
+  offstage.redraw();
+  
+
+ }
+ else{
+  for(let i=0;i<20;i++){
+    const rand2 = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+  const rand3 = Math.floor(Math.random() * (800 - 600 + 1)) + 600;
+    offstage.puzzle.pieces[i].translate(rand3, rand2);
+  }
+ }
+
+ 
+
+  offstage.draw();
+
+ 
+
+
+  offstage.attachSolvedValidator();
+  offstage.onValid(() => {
+    console.log("SOLVED!");
+    clearInterval(c);
+
+    var w = window.innerWidth;
+        if(w<1000){
+        const element = document.querySelector('.scorebuton');
+        element.style.visibility = 'visible';
+        }
+        else{
+          const element = document.querySelector('.scorebutton');
+        element.style.visibility = 'visible';
+        }
+
+
+    var input = document.getElementById("s"); //Select your button element
+    input.setAttribute("value",time); //Set value attribute to your element
+    
+  })
+
+          }
+
+    
+
+
+    
+
+  //   const counter = () =>{
+  //   const count = () => {
+  //     time--;
+  //   }
+
+  //   setInterval(count, 1000);
+  //   console.log(time);
+  // }
+
+  // counter();
+        </script>
+
+
+
+
+<style> .form-group { margin-top: 15px; } #responsive-canvas .konvajs-content canvas, #offstage-canvas .konvajs-content canvas { border: solid !important; } #validated-canvas-overlay { position:absolute; left:0; top: 0; margin: 0; padding: 0; opacity: 0; pointer-events: none; transition: opacity 1s ease-in-out; } #validated-canvas-overlay.active { opacity: 1; } </style>
+
+</body>
+</html>

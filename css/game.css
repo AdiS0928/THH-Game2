@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'Ara Aqeeq';
+    src: url('/fonts/ara/ara_aqeeq_bold-webfont.woff2') format('woff2'),
+         url('/fonts/ara/ara_aqeeq_bold-webfont.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'lilita_oneregular';
+    src: url('/fonts/lilitaone/lilitaone-regular_0-webfont.woff2') format('woff2'),
+         url('/fonts/lilitaone/lilitaone-regular_0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+
+body{
+    background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%);
+    overflow-y: hidden;
+}
+.game{
+   
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    display: flex;
+
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 0px;
+}
+
+.scorecontain{
+    width: 6rem;
+    height: 3rem;
+    background: rgb(29, 175, 175);
+    background-color: rgb(29, 175, 175);;
+    text-align: center;
+    border-radius: 12px;
+    
+}
+
+.scorebutton{
+    width: 6rem;
+    height: 3rem;
+    background: rgb(29, 175, 175);
+    background-color: rgb(29, 175, 175);;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Ara Aqeeq';
+    margin-top: 50px;
+    visibility: hidden;
+    
+}
+
+.score{
+    color: white;
+    opacity: 1;
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Ara Aqeeq';
+
+}
+
+.mobtxt{
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.scorecanvas{
+    height: 500px;
+    width: 624px;
+    border: solid;
+    border-width: 20px;
+    border-image: linear-gradient(to right, #FFCF07, #FE8116) 1;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 25px;
+}
+
+.Results{
+    visibility: visible;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.txt{
+    color: white;
+    padding: 0px;
+    font-size: 2rem;
+    margin-top: 50px;
+    font-family: 'Ara Aqeeq';
+    width: 420px;
+    flex:80%;
+}
+
+.txt2{
+
+    font-size: 5rem;;
+    color: red;
+    margin-top:100px;
+    font-family: 'Ara Aqeeq';
+    width: 420px;
+    flex:20%;
+    padding-left: 208px;
+}
+
+
+
+
+@media screen and (max-width: 1500px) {
+    .game{
+   
+        flex-direction: column;
+    
+    }
+    html,body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
+    .txt{
+        visibility: hidden;
+        flex:10%;
+    }
+
+    .mobtxt{
+        visibility: visible;
+        color: white;
+        font-size: 2rem;
+        margin: 0;
+        font-family: 'Ara Aqeeq';
+        width: 420px;
+    }
+
+}
+
+@media screen and (max-height: 800px) {
+    .game{
+   
+        flex-direction: column;
+        width: 100%;
+    
+    }
+
+
+    .scorecanvas{
+        width: 100%;
+    }
+    .body{
+        height: 100vh;
+        background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%);
+    }
+    .scorebuttonl{
+        visibility: hidden;
+        width: 6rem;
+        height: 3rem;
+        background: rgb(29, 175, 175);
+        background-color: rgb(29, 175, 175);;
+        text-align: center;
+        border-radius: 12px;
+        color: white;
+        font-family: 'Ara Aqeeq';
+        margin-top: -1000px;
+    }
+}
+
+
+.scorebuttonl{
+    visibility: hidden;
+    width: 6rem;
+    height: 3rem;
+    background: rgb(29, 175, 175);
+    background-color: rgb(29, 175, 175);;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Ara Aqeeq';
+}
+
+.scorebuton{
+    width: 6rem;
+    height: 3rem;
+    background: rgb(29, 175, 175);
+    background-color: rgb(29, 175, 175);;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Ara Aqeeq';
+    visibility: hidden;
+}
+
+.scorebuttnl{
+    width: 6rem;
+    height: 3rem;
+    background: rgb(29, 175, 175);
+    background-color: rgb(29, 175, 175);;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Ara Aqeeq';
+}
