@@ -11,7 +11,7 @@ var app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 // app.use(express.static(__dirname + '/public'));
-mongoose.connect(DATABASEURL).then(
+mongoose.connect('mongodb+srv://thhintern:Hotshotgamer2134@cluster0.zyzd6qa.mongodb.net/?retryWrites=true&w=majority').then(
     ()=> {
         console.log("i am connected");
     }
