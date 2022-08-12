@@ -5,6 +5,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
 var ObjectId = require('mongodb').ObjectID;
+require("dotenv").config();
 app.use(bodyParser.urlencoded({
     extended: true
   }));
