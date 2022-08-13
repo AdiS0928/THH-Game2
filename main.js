@@ -25,7 +25,7 @@ var user = "";
 
 const Movie = mongoose.model('User', moviesSchema);
 var PORT = process.env.PORT || 3000;
-const static_path = path.join(__dirname,"../client");
+const static_path = path.join(__dirname);
 app.use(express.static(static_path));
 
 app.get("/",(req,res) =>{
