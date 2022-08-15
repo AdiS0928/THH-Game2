@@ -88,10 +88,10 @@
 
           var art = "";
           if(rand == 1){
-            art = "Artwork1.jpg";
+            art = "Artwork4.jpeg";
           }
           else{
-            art = "Artwork2.jpg"
+            art = "Artwork4.jpeg"
           }
           let dali = new Image();
           dali.src = 'static/'+art;
@@ -107,7 +107,7 @@
 
   offstage.adjustImagesToPuzzleHeight();
   offstage.autogenerate({
-    horizontalPiecesCount: 5,
+    horizontalPiecesCount: 4,
     verticalPiecesCount: 4,
     insertsGenerator: headbreaker.generators.flipflop
   });
@@ -154,26 +154,26 @@ if (h<800){
   // offstage.puzzle.pieces[17].translate(-20, 130);
   // offstage.puzzle.pieces[18].translate(-10, 120);
   // offstage.puzzle.pieces[19].translate(-5, 150);
-  for(let i =0;i<5;i++){
+  for(let i =0;i<4;i++){
     let rand1 = Math.floor(Math.random() * (600 - 500 + 1)) + 500;
     let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
     offstage.puzzle.pieces[i].translate(-rand2, rand1);
   }
 
-  for(let i =5;i<10;i++){
+  for(let i =4;i<8;i++){
     let rand1 = Math.floor(Math.random() * (540 - 500 + 1)) + 500;
     let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
     offstage.puzzle.pieces[i].translate(-rand2, rand1);
   }
 
-  for(let i =10;i<15;i++){
+  for(let i =8;i<12;i++){
     let rand1 = Math.floor(Math.random() * (570 - 530 + 1)) + 530;
     let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
     offstage.puzzle.pieces[i].translate(-rand2, rand1);
   }
 
 
-  for(let i =15;i<20;i++){
+  for(let i =12;i<16;i++){
     let rand1 = Math.floor(Math.random() * (500 - 400 + 1)) + 400;
     let rand2 = Math.floor(Math.random() * (80 - 1 + 1)) + 1
     offstage.puzzle.pieces[i].translate(-rand2, rand1);
@@ -184,7 +184,7 @@ if (h<800){
 
  }
  else{
-  for(let i=0;i<20;i++){
+  for(let i=0;i<16;i++){
     const rand2 = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
   const rand3 = Math.floor(Math.random() * (800 -600 + 1)) + 600;
     offstage.puzzle.pieces[i].translate(rand3, -rand2);

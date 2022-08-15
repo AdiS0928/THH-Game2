@@ -63,7 +63,7 @@ app.post("/leader",async (req,res) => {
 })
 
 app.get("/leader-l",(req,res) => {
-    Movie.find({}, function(err, movies) {
+    Movie.find({"Score":{$ne : 0}}, function(err, movies) {
         // console.log(name);
         // console.log(score);
         res.render('lostleaderboard', {
@@ -77,7 +77,7 @@ app.get("/leader-l",(req,res) => {
 
 app.get("/l",(req,res) =>{
     // console.log(name)
-    Movie.find({}, function(err, movies) {
+    Movie.find({"Score":{$ne : 0}}, function(err, movies) {
         // console.log(name);
         // console.log(score);
         res.render('leaderboard', {

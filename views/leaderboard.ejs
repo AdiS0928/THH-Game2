@@ -13,7 +13,7 @@
 
                 <div class="scorecontain">
                     <p class="scorehead">YOUR SCORE</p>
-                    <p class="score"><%= scorea %></p>
+                    <p class="score"><%= scorea*3 %></p>
                 </div>
 
 
@@ -27,7 +27,7 @@
                     <%moviesList.forEach(movie => {%>
                         <tr>
                             <td><%= movie.User %></td>
-                            <td><%= movie.Score %> </td>
+                            <td><%= movie.Score*3 %> </td>
                         </tr>
                     <%})%>
 
