@@ -96,7 +96,7 @@
           let dali = new Image();
           dali.src = 'static/'+art;
           dali.onload = () => {
-            const offstage = new headbreaker.Canvas('my-canvas', { width: 1500, height: 600,
+            const offstage = new headbreaker.Canvas('my-canvas', { width: 1500, height: 550,
     pieceSize: {x: 125, y: 125}, proximity: 9, strokeWidth: 1.5,
     lineSoftness: 0.18, image: dali,
     // ... more configs ...
@@ -121,6 +121,10 @@
   // });
   var w = window.innerWidth;
 var h = window.innerHeight;
+
+if (h<800){
+  offstage.resize(1500,550);
+}
  console.log(w,h)
   if(w <= 1000){
     offstage.resize(700,1200);
@@ -181,9 +185,9 @@ var h = window.innerHeight;
  }
  else{
   for(let i=0;i<20;i++){
-    const rand2 = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
-  const rand3 = Math.floor(Math.random() * (800 - 600 + 1)) + 600;
-    offstage.puzzle.pieces[i].translate(rand3, rand2);
+    const rand2 = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+  const rand3 = Math.floor(Math.random() * (800 -600 + 1)) + 600;
+    offstage.puzzle.pieces[i].translate(rand3, -rand2);
   }
  }
 
