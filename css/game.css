@@ -16,6 +16,7 @@
 body{
     background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%);
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 .game{
    
