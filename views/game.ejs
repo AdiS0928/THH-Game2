@@ -13,7 +13,7 @@
         <div class="game">
           <div class= "left">
             <form action="/leader" id = "frm" method="POST">
-              <div>
+              <div class="scorecontaintop">
               <div class="scorecontain">
                   <p class="score" id="time"></p>
                   <input type="hidden" value="12" id="s" name="s"></input>
@@ -124,6 +124,13 @@ var h = window.innerHeight;
 
 if (h<800){
   offstage.resize(1500,550);
+  const element = document.querySelector('.scorebutton');
+        element.style.margin = '0';
+        element.style.marginTop = '20px';
+        const element2 = document.querySelector('.scorecontaintop');
+        element2.style.height = '70px';
+
+        
 }
  console.log(w,h)
   if(w <= 1000){
