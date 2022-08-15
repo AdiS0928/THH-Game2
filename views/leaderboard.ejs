@@ -33,12 +33,29 @@
 
                 </table>
             </div>
-            <form action="/" method="get">
+            <form action="/" method="get" class="pam">
             <button class='card-button' type="submit">
             <span class="txt2"> PLAY AGAIN </span>
             </button>
+
+                <!-- <p class="txt3">MAJID</p> -->
+
         </form>
         </div>
+
+        <script>
+            var w = window.innerWidth;
+var h = window.innerHeight;
+            if(w<1000){
+                const element = document.querySelector('.table');
+        element.style.height = '40rem';
+        element.style.width = '40rem';
+        element.style.fontSize = '2.5rem';
+
+        const element2 = document.querySelector('.nametxt');
+        element2.style.fontSize = '5rem';
+            }
+          </script>
           
     </body>
 </html>

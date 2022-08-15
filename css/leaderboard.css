@@ -8,6 +8,24 @@ body {
     background: linear-gradient(to bottom, #ABF1BC 0%, #AEE7F8 35%, #87CDF6 100%);
     
 }
+.pam{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+.txt3{
+flex: 0%;
+  font-size: 5rem;
+  align-self: flex-end;
+  color: red;
+
+  font-family: 'Ara Aqeeq';
+
+
+}
 
 .back{
     
