@@ -34,7 +34,7 @@ body {
   }
   .table{
     height: 10rem;
-    width: 20rem;
+    width: 29rem;
     border: white solid;
     border-radius: 20px;
     padding: 30px;
@@ -135,6 +135,7 @@ body {
     justify-content: center;
 
     color: white;
+    padding: 0;
      
   }
   
@@ -145,4 +146,20 @@ body {
   td {
     color: white;
     font-family: 'Ara Aqeeq';
+  }
+
+  @media screen and (max-width: 1000px) {
+    .container1{
+        flex-direction: column;
+        width: 683px;
+        height: 1132px;
+    }
+
+    td{
+        color: white;
+        font-family: 'Ara Aqeeq';
+        font-size: 2rem;
+        align-self: center;
+      }
+    
   }
