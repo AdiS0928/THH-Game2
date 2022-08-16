@@ -17,6 +17,7 @@
               <div class="scorecontain">
                   <p class="score" id="time"></p>
                   <input type="hidden" value="12" id="s" name="s"></input>
+                  <input type="hidden" value="<%= time %>" id="t" name="t"></input>
               </div>
               
               <div class="mobtxt">
@@ -48,14 +49,29 @@
           </div>
       </div>
         <script>
-          var time = 60;
+          var time = document.getElementById("t").value;
+          var t = document.getElementById("t").value;
+          console.log(t);
     var i = 0;
     var c = null;
-    document.getElementById("time").innerHTML ="1:00";
+    document.getElementById("time").innerHTML =Math.ceil(time/60) +":00";
     
+
     function count (){
       time--;
+      if(time > 60){
+        
+        if(time%60 < 10){
+        document.getElementById("time").innerHTML = "0"+ Math.ceil(time/60) -1  + ":0" + time%60;
+        
+      }
+      else{
+          document.getElementById("time").innerHTML = "0"+ Math.ceil(time/60) -1  + ":" + time%60;
+        }
+      }
+      else{
       document.getElementById("time").innerHTML = "00:" + time;
+      }
       if(time < 10){
         document.getElementById("time").innerHTML = "00:0" + time;
       }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+    <div class="home">
+        <div class="container1">
+
+                <form class="details" action="/settings-update" method="post">
+                    <h1 class='head' id="head">Settings</h1>
+                    <label class="input-head">Set Time:</label>
+                    <input type="text" value="60" class="input" name = "timer" required>
+                    
+                    <button class="card-button" type="submit">
+                        <span class="txt2"> SUBMIT! </span> 
+                     </button>
+                </form>
+
+            <div>
+                <h1 class='head' id="head">LeaderBoard</h1>
+                <table class="table">
+                    <tr>
+                        <td>Name</td>
+                        <td></td>
+                    </tr>
+                    
+                    <% for( var i = 0; i<moviesList.length; i++) {%>
+                        <tr>
+                            
+                            <td><%= moviesList[i].User %></td>
+                            
+                            <td>
+                                <form action="/delete" method="post">
+                                <input type="hidden" name="nameid" value= "<%= moviesList[i]._id %>">
+                                <button class="card-delbutton" >
+                                Delete!
+                            </button>
+                        </form>
+                        </td>
+                        </form>
+                        </tr>
+                    <%}%>
+
+
+                    </table>
+        </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

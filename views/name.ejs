@@ -21,6 +21,21 @@
         </div>
           
           </div>
-          
+          <script>
+            function filterTextarea() {
+  var textarea = document.getElementById('Name');
+  var matches = textarea.value.match(/\b(?=\w)(asshole|fucking|fuck|bitch|ass|)\b(?!\w)/gi);
+
+  if (matches) {
+    alert('Hey, no bad words!');
+    textarea.value = '';
+    return;
+  }
+
+
+  // Other stuff.
+}
+document.getElementById('Name').addEventListener('keyup', filterTextarea, false);
+          </script>
     </body>
 </html>

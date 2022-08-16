@@ -19,11 +19,18 @@ const moviesSchema = {
     Score: Number
 }
 
+const admin = {
+    Time: Number,
+    User: String
+}
+
 var name = "";
 var score = 0;
 var user = "";
+var time = 60;
 
 const Movie = mongoose.model('User', moviesSchema);
+const Admin = mongoose.model('admin', admin)
 var PORT = process.env.PORT || 3000;
 const static_path = path.join(__dirname);
 app.use(express.static(static_path));
@@ -40,7 +47,11 @@ app.get("/name",(req,res) =>{
 
 app.post("/game",(req,res) =>{
 
-    const NameData = new Movie({User:req.body.Name,Score:0});
+    Admin.find({}, function(err, admin) {
+        console.log(admin);
+
+        time = admin[0].Time;
+        const NameData = new Movie({User:req.body.Name,Score:0});
     console.log(req.body);
     NameData.save().then((movie) => {
         // console.log(movie.id);
@@ -50,7 +61,10 @@ app.post("/game",(req,res) =>{
       });
       name = NameData._id;
       user = NameData.User;
-      res.render("game");
+      res.render("game",{time:time});
+    });
+
+    
       
 })
 
@@ -70,6 +84,7 @@ app.get("/leader-l",(req,res) => {
             moviesList: movies,
             scorea: score,
             usera:user
+            
         })
     }).sort({Score : -1}).limit(5);
 })
@@ -91,6 +106,71 @@ app.get("/l",(req,res) =>{
 app.get("/loser",(req,res) =>{
     res.render("lostleaderboard");
 })
+
+app.get("/admin",(req,res) => {
+    res.render("admin");
+})
+
+app.post("/settings",(req,res) => {
+    var pass = req.body.pass;
+    var username = req.body.Username;
+    console.log(req.body)
+    if(username =="THHADMIN" && pass =="W1R3L3SS"){
+        Movie.find({"Score":{$ne : 0}}, function(err, movies) {
+            // console.log(name);
+            // console.log(score);
+            res.render('setting', {
+                moviesList: movies,
+                scorea: score,
+                usera:user
+                
+            })
+        }).sort({Score : -1}).limit(5);
+        // res.render("setting")
+    }
+    else{
+        console.log(req.body)
+        // res.redirect("/fail")
+        res.render("admin")
+        console.log("fail")
+    }
+    
+})
+
+app.post("/settings-update", async (req,res) => {
+    console.log(req.body.timer)
+    const doc = await Admin.findOneAndUpdate({User:"admin"}, {$set: {Time: req.body.timer}});
+    res.redirect("/update") 
+})
+
+app.get("/update", (req,res) => {
+    res.render("setting")
+})
+
+app.post("/delete", (req,res) =>{
+    console.log(req.body.nameid)
+    Movie.deleteOne({_id: req.body.nameid}, function(err,nam){
+        Movie.find({"Score":{$ne : 0}}, function(err, movies) {
+            // console.log(name);
+            // console.log(score);
+            res.render('setting', {
+                moviesList: movies,
+                scorea: score,
+                usera:user
+                
+            })
+        }).sort({Score : -1}).limit(5);
+    });
+    
+})
+
+// app.get("/success",(req,res) =>{
+//     res.render("settings")
+// })
+
+// app.get("/fail",(req,res) =>{
+//     res.render("admin")
+// })
 
 
 app.listen(process.env.PORT || 3000, function(){
