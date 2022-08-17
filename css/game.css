@@ -14,7 +14,8 @@
   }
 
 body{
-    background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%);
+    /* background: linear-gradient(to bottom, #5d0076 0%, #8900ae 35%, #c900ff 100%); */
+    background-image: url("/static/artboard.jpeg");
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -27,6 +28,7 @@ body{
     display: flex;
 
 }
+
 
 .left{
     display: flex;
@@ -46,7 +48,7 @@ body{
     
 }
 
-.scorebutton{
+/* .scorebutton{
     width: 6rem;
     height: 3rem;
     background: rgb(29, 175, 175);
@@ -58,8 +60,25 @@ body{
     margin-top: 50px;
     visibility: hidden;
     
-}
+} */
 
+.scorebutton{
+    /* width: 6rem; */
+    /* height: 3rem; */
+    background: #8245c6;
+    background-color: #8245c6;
+    text-align: center;
+    border-radius: 35px;
+    padding:12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 0;
+    color: white;
+    font-family: 'Ara Aqeeq';
+    margin-top: 50px;
+
+    
+}
 .score{
     color: white;
     opacity: 1;
@@ -83,8 +102,46 @@ body{
     border-width: 20px;
     border-image: linear-gradient(to right, #FFCF07, #FE8116) 1;
     margin: auto;
+    overflow: visible;
+
 
 }
+
+.popup{
+    width: 600px;
+    height: 400px;
+    background-image: url("/static/art2.jpeg");
+    background-size: cover;
+
+    box-shadow: 0px 0px 100px 0px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: 2s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-open{
+    visibility: visible;
+    top:50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+/* .im{
+    position: absolute; top: 0px; left: 0px;
+    visibility: hidden;
+} */
 
 .Results{
     visibility: visible;
@@ -205,10 +262,39 @@ body{
 .scorebuttnl{
     width: 6rem;
     height: 3rem;
-    background: rgb(29, 175, 175);
-    background-color: rgb(29, 175, 175);;
+    background: #8245c6;
+    background-color: #8245c6;
     text-align: center;
     border-radius: 12px;
     color: white;
     font-family: 'Ara Aqeeq';
 }
+
+.txt4{
+    
+    font-size: 2rem;;
+    color: red;
+    margin:0px;
+    font-family: 'Ara Aqeeq';
+
+    padding-top: 50px;
+}
+
+.txt5{
+
+    font-size: 1.5rem;;
+    color: black;
+    margin:0px;
+    font-family: 'Ara Aqeeq';
+
+    padding: 0px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .txt2{
+        align-self: center;
+    }
+
+  }

@@ -163,3 +163,23 @@ body {
       }
     
   }
+
+  .card-delbutton2{
+    height: 2rem;
+    width: 8rem;
+    border-radius: 20px;
+    /* background-image: linear-gradient(to bottom, #FBF2FF 0%, #DC86FA 0%, #C030ED 100%); */
+    background-color: red;
+    border-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    margin-top: 12px;
+     
+  }
+  
+  .card-delbutton2:hover{
+    cursor: pointer;
+  }

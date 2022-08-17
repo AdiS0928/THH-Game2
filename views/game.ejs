@@ -31,14 +31,25 @@
         </div>
           <div class="rrr" id="dd">
       </div>
+            <div >
+              <!-- <canvas class="im" height="500" width="500"></canvas> -->
               <div class="scorecanvas" id="my-canvas" onmousedown="start()" ontouchstart="start()">
 
               </div>
+              <!-- <img src="static/Artwork4.jpeg" alt="" class="im" style="transition: 2s;"> -->
+              
+            </div>
+              <div class="popup" id="popup">
+                <h2 class="txt4" id="pt1">Congratulations You Won!</h2>
+                <p class="txt5">Click Below to see the leaderboard and Score!</p>
+                <img src="static/artwork4.jpeg" id="win" alt="" width="40%" height="40%" >
+                <button class="scorebutton" value="Desk" name="Desk">LEADERBOARD</button>
+              </div>
   
                 
-                  <button class="scorebutton"  type="submit" value="Desk" name="Desk">
+                  <!-- <button class="scorebutton"  type="submit" value="Desk" name="Desk">
                       SEE RESULTS!
-                  </button>
+                  </button> -->
 
             </form>
           </div>
@@ -49,7 +60,7 @@
           </div>
       </div>
         <script>
-          var time = document.getElementById("t").value;
+          var time = 2;
           var t = document.getElementById("t").value;
           console.log(t);
     var i = 0;
@@ -86,16 +97,30 @@
         else{
           const element = document.querySelector('.scorebutton');
         element.style.visibility = 'visible';
+        
         }
         document.getElementById("frm").setAttribute("method","get");
         document.getElementById("frm").setAttribute("action","/leader-l");
+        let poptxt = document.getElementById("pt1");
+        poptxt.innerHTML = "Better Luck Next Time!";
+        const ele = document.getElementById("win");
+        ele.remove();
+        let popup = document.getElementById("popup");
+        popup.classList.add("popup-open")
+    // function openPopup(){
+    //   	popup.classList.add("popup-open")
+    // }
+
+    // openPopup();
+        // document.getElementById("frm").setAttribute("method","get");
+        // document.getElementById("frm").setAttribute("action","/leader-l");
         
       }
     }
 
     function start(){
       if(i==0){
-      c = setInterval(count,1000);
+      // c = setInterval(count,1000);
       i++;
       }
     }
@@ -112,13 +137,14 @@
           let dali = new Image();
           dali.src = 'static/'+art;
           dali.onload = () => {
-            const offstage = new headbreaker.Canvas('my-canvas', { width: 1500, height: 550,
-    pieceSize: {x: 125, y: 125}, proximity: 9, strokeWidth: 1.5,
+            const offstage = new headbreaker.Canvas('my-canvas', { width: 1500, height: 500,
+    pieceSize: {x: 125, y: 125}, proximity: 30,
     lineSoftness: 0.18, image: dali,
     // ... more configs ...
     preventOffstageDrag: true,
     outline: new headbreaker.outline.Rounded(),
-    fixed:true
+    fixed:true,
+    
   });
 
   offstage.adjustImagesToPuzzleHeight();
@@ -150,7 +176,7 @@ if (h<800){
 }
  console.log(w,h)
   if(w <= 1000){
-    offstage.resize(700,1200);
+    offstage.resize(500,1200);
   //   for(let i=0;i<20;i++){
   //   const rand2 = Math.floor(Math.random() * (600 - 300 + 1)) + 300
   //   00;
@@ -207,11 +233,76 @@ if (h<800){
 
  }
  else{
-  for(let i=0;i<16;i++){
-    const rand2 = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
-  const rand3 = Math.floor(Math.random() * (800 -600 + 1)) + 600;
-    offstage.puzzle.pieces[i].translate(rand3, -rand2);
+  // for(let i=0;i<16;i++){
+  //   const rand2 = Math.floor(Math.random() * (-80 -100  + 1)) - 100;
+  // const rand3 = Math.floor(Math.random() * (700 -500 + 1)) + 500;
+  //   offstage.puzzle.pieces[i].translate(rand3, rand2);
+  // }
+
+    for(let i=0;i<4;i++){
+    
+  const c =  Math.floor(Math.random() * (2 - 1  + 1)) - 1;
+
+  if(c==1){
+    const rand2 = Math.floor(Math.random() * (300 + 10  + 1)) + 10;
+  const rand3 = Math.floor(Math.random() * (900 -500 + 1)) + 500;
+    offstage.puzzle.pieces[i].translate(rand3, rand2);
+  }else{
+    const rand2 = Math.floor(Math.random() * (200 - 10  + 1)) - 10;
+  const rand3 = Math.floor(Math.random() * (900 -500 + 1)) + 500;
+    offstage.puzzle.pieces[i].translate(rand3, rand2);
+    
   }
+    
+  }
+
+  for(let i=4;i<8;i++){
+    
+    const c =  Math.floor(Math.random() * (2 - 1  + 1)) - 1;
+  
+    if(c==1){
+      const rand2 = Math.floor(Math.random() * (300 + 10  + 1)) + 10;
+    const rand3 = Math.floor(Math.random() * (900 -500 + 1)) + 500;
+      offstage.puzzle.pieces[i].translate(rand3, rand2);
+    }else{
+      const rand2 = Math.floor(Math.random() * (200 - 10  + 1)) - 10;
+    const rand3 = Math.floor(Math.random() * (900 -500 + 1)) + 500;
+      offstage.puzzle.pieces[i].translate(rand3, rand2);
+    }
+      
+    }
+
+    for(let i=8;i<12;i++){
+    
+    const c =  Math.floor(Math.random() * (2 - 1  + 1)) - 1;
+  
+    if(c==1){
+      const rand2 = Math.floor(Math.random() * (50 + 10  + 1)) + 10;
+    const rand3 = Math.floor(Math.random() * (900 -500 + 1)) + 500;
+      offstage.puzzle.pieces[i].translate(rand3, -rand2);
+    }else{
+      const rand2 = Math.floor(Math.random() * (100 + 10  + 1)) + 10;
+    const rand3 = Math.floor(Math.random() * (900 -500 + 1)) + 500;
+      offstage.puzzle.pieces[i].translate(rand3, -rand2);
+    }
+      
+    }
+
+    for(let i=12;i<16;i++){
+    
+    const c =  Math.floor(Math.random() * (2 - 1  + 1)) - 1;
+  
+    if(c==1){
+      const rand2 = Math.floor(Math.random() * (100 + 50  + 1)) + 50;
+    const rand3 = Math.floor(Math.random() * (900 -500 + 1)) + 500;
+      offstage.puzzle.pieces[i].translate(rand3, -rand2);
+    }else{
+      const rand2 = Math.floor(Math.random() * (100 + 50  + 1)) + 50;
+    const rand3 = Math.floor(Math.random() * (900 - 500 + 1)) + 500;
+      offstage.puzzle.pieces[i].translate(rand3, -rand2);
+    }
+      
+    }
  }
 
  
@@ -225,6 +316,15 @@ if (h<800){
   offstage.onValid(() => {
     console.log("SOLVED!");
     clearInterval(c);
+    let popup = document.getElementById("popup");
+    const ele = document.querySelector('.popup');
+    ele.style.height = "500px";
+    ele.style.width = "700px";
+    function openPopup(){
+      	popup.classList.add("popup-open")
+    }
+
+    openPopup();
 
     var w = window.innerWidth;
         if(w<1000){
@@ -239,6 +339,12 @@ if (h<800){
 
     var input = document.getElementById("s"); //Select your button element
     input.setAttribute("value",time); //Set value attribute to your element
+
+    setTimeout(() =>{
+      const element = document.querySelector('.im');
+        element.style.visibility = 'visible';
+        
+    })
     
   })
 

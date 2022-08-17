@@ -164,6 +164,24 @@ app.post("/delete", (req,res) =>{
     
 })
 
+app.post("/reset", (req,res) =>{
+    console.log(req.body.nameid)
+    Movie.deleteMany({}, function(err,nam){
+        Movie.find({"Score":{$ne : 0}}, function(err, movies) {
+            // console.log(name);
+            // console.log(score);
+            res.render('setting', {
+                moviesList: movies,
+                scorea: score,
+                usera:user
+                
+            })
+        }).sort({Score : -1}).limit(5);
+    });
+    
+})
+
+
 // app.get("/success",(req,res) =>{
 //     res.render("settings")
 // })
