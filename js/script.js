@@ -455,8 +455,14 @@ function onSolve() {
     clearInterval(c);
     let popup = document.getElementById("popup");
     const ele = document.querySelector('.popup');
-    ele.style.height = "40vh";
+
+    if(window.innerWidth<1000){
+        ele.style.height = "40vh";
     ele.style.width = "60vw";
+    }else{
+    ele.style.height = "500px";
+    ele.style.width = "700px";
+    }
     function openPopup(){
       	popup.classList.add("popup-open")
     }
