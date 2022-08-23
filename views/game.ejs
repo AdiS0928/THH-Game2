@@ -3,63 +3,100 @@
     <head>
       <link rel="stylesheet" href="css/game.css">
       <script src="js/headbreaker.js"></script> 
-    </head>
-    <body>
-      
 
+      <meta charset="UTF-8">
+	<title>Puzzle</title>
+
+	<!-- responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- meta -->
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+	<meta name="title" content="Puzzlefy">
+	<meta name="description" content="Solve and share puzzles to your friends!">
+	<meta name="keywords" content="puzzle, jigsaw, p5js, puzzlefy, puzzlify, image to puzzle, image to jigsaw">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="puzzlefy.netlify.app">
+	<meta property="og:url" content="https://puzzlefy.netlify.app">
+	<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/f/fe/Puzzle.jpg">
+	<meta property="og:title" content="Puzzlefy">
+	<meta property="og:description" content="Solve and share puzzles with your friends!">
+
+	<script src=js/meta.js></script>
+
+	<!-- style -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- icons -->
+	<script src="https://kit.fontawesome.com/d86c5c458d.js" crossorigin="anonymous"></script>
+    </head>
+
+
+    <body touch-action=none unresolved>
+      
+      <div class="ui">
+<div class="game">
+  <div class= "left">
+    <form action="/leader" id = "frm" method="POST">
+      <div class="scorecontaintop">
+        <div class="mobtxt">
+          <p >Complete the puzzle before the time runs out!</p>
+        </div>
+      <div class="scorecontain">
+          <p class="score" id="time"></p>
+          <input type="hidden" value="12" id="s" name="s"></input>
+          <input type="hidden" value="<%= time %>" id="t" name="t"></input>
+      </div>
+      
+      
+    </div>
+    <div>
+    <button class="scorebuton"  type="submit" value="mobile" name="mobile">
+      SEE RESULTS!
+  </button>
+</div>
+  <div class="rrr" id="dd">
+</div>
+    <div >
+      <!-- <canvas class="im" height="500" width="500"></canvas> -->
+      <!-- <div class="scorecanvas" id="my-canvas" onmousedown="start()" ontouchstart="start()">
+
+      </div> -->
+
+      <!-- <img src="static/Artwork4.jpeg" alt="" class="im" style="transition: 2s;"> -->
+      
+    </div>
+      <div class="popup" id="popup">
+        <h2 class="txt4" id="pt1">Congratulations You Won!</h2>
+        <p class="txt5">Click Below to see the leaderboard and Score!</p>
+        <img src="static/artwork4.jpeg" id="win" alt="" width="40%" height="40%" >
+        <button class="scorebutton" value="Desk" name="Desk">LEADERBOARD</button>
+      </div>
+
+        
+          <!-- <button class="scorebutton"  type="submit" value="Desk" name="Desk">
+              SEE RESULTS!
+          </button> -->
+
+    </form>
+  </div>
+
+  <div class= "right">
+     <p class="txt">Complete the puzzle before the time runs out!</p>
+     <p class="txt2">MAJID</p>
+  </div>
+</div>
+
+
+</div>
 
         <!-- <div id="my-canvas">
         </div> -->
-        <div class="game">
-          <div class= "left">
-            <form action="/leader" id = "frm" method="POST">
-              <div class="scorecontaintop">
-              <div class="scorecontain">
-                  <p class="score" id="time"></p>
-                  <input type="hidden" value="12" id="s" name="s"></input>
-                  <input type="hidden" value="<%= time %>" id="t" name="t"></input>
-              </div>
-              
-              <div class="mobtxt">
-              <p >Complete the puzzle before the time runs out!</p>
-            </div>
-            </div>
-            <div>
-            <button class="scorebuton"  type="submit" value="mobile" name="mobile">
-              SEE RESULTS!
-          </button>
-        </div>
-          <div class="rrr" id="dd">
-      </div>
-            <div >
-              <!-- <canvas class="im" height="500" width="500"></canvas> -->
-              <div class="scorecanvas" id="my-canvas" onmousedown="start()" ontouchstart="start()">
-
-              </div>
-              <!-- <img src="static/Artwork4.jpeg" alt="" class="im" style="transition: 2s;"> -->
-              
-            </div>
-              <div class="popup" id="popup">
-                <h2 class="txt4" id="pt1">Congratulations You Won!</h2>
-                <p class="txt5">Click Below to see the leaderboard and Score!</p>
-                <img src="static/artwork4.jpeg" id="win" alt="" width="40%" height="40%" >
-                <button class="scorebutton" value="Desk" name="Desk">LEADERBOARD</button>
-              </div>
-  
-                
-                  <!-- <button class="scorebutton"  type="submit" value="Desk" name="Desk">
-                      SEE RESULTS!
-                  </button> -->
-
-            </form>
-          </div>
-
-          <div class= "right">
-             <p class="txt">Complete the puzzle before the time runs out!</p>
-             <p class="txt2">MAJID</p>
-          </div>
-      </div>
-        <script>
+        
+        <!-- <script>
           var time = 2;
           var t = document.getElementById("t").value;
           console.log(t);
@@ -365,12 +402,19 @@ if (h<800){
   // }
 
   // counter();
-        </script>
+        </script> -->
+
+        	<!-- scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+	<script src=plugins/clipboard.js></script>
+	<script src=plugins/transform.js></script>
+	<script src=plugins/cors.js></script>
+	<script src=js/jigsaw.js></script>
+	<script src=js/script.js></script>
 
 
 
-
-<style> .form-group { margin-top: 15px; } #responsive-canvas .konvajs-content canvas, #offstage-canvas .konvajs-content canvas { border: solid !important; } #validated-canvas-overlay { position:absolute; left:0; top: 0; margin: 0; padding: 0; opacity: 0; pointer-events: none; transition: opacity 1s ease-in-out; } #validated-canvas-overlay.active { opacity: 1; } </style>
+<!-- <style> .form-group { margin-top: 15px; } #responsive-canvas .konvajs-content canvas, #offstage-canvas .konvajs-content canvas { border: solid !important; } #validated-canvas-overlay { position:absolute; left:0; top: 0; margin: 0; padding: 0; opacity: 0; pointer-events: none; transition: opacity 1s ease-in-out; } #validated-canvas-overlay.active { opacity: 1; } </style> -->
 
 </body>
 </html>
