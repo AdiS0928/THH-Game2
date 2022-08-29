@@ -32,9 +32,9 @@ body {
 
 .admin-button{
   height: 2rem;
-width: 4rem;
+  width: 4rem;
 
-background-color: rgba(4,164,209,1);
+background-color:#4AC3CB;
 
 border: 0;
 
@@ -58,7 +58,11 @@ a {
   border: solid;
   border-width: 20px;
   border-image: linear-gradient(to right, #FFCF07, #FE8116) 1;
-  background: rgb(40, 219, 219);
+  /* background: rgb(40, 219, 219); */
+  background-image: url('/static/bg.jpeg');    
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: 0.6;
 }
 
 .home{
@@ -168,3 +172,45 @@ td {
   font-family: 'Ara Aqeeq';
 }
 
+@media only screen and (max-width: 1000px) {
+  
+  .container1{
+    height: 100vh;
+    background-image: url('/static/mbg.jpeg');    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: 0.6;
+  }
+ 
+
+  .admin-button{
+  
+  background-color:  #4AC3CB;
+  
+  border: 0;
+  
+  }
+  
+  .contain{
+    height: 100vh;
+  }
+
+  .head{
+    font-family: 'Ara Aqeeq';
+    font-size: 13rem;;
+    color: red;
+    margin: 0;
+  }
+
+  .card-button{
+    height: 4rem;
+    width: 17rem;
+
+     
+  }
+
+  .btn-txt{
+
+    font-size: 3rem;
+  }
+}

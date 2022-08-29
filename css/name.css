@@ -83,5 +83,17 @@ body {
   .card-button:hover{
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 1000px) {
+
+    .container1{
+      height: 98vh;
+    }
+
+    .cardcontent{
+      height: 98vh;
+    }
+
+  }
   
   
