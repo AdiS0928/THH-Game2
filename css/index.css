@@ -174,8 +174,23 @@ td {
 
 @media only screen and (max-width: 1000px) {
   
+  .home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    position: fixed;
+    border: 20px;
+    border-color: red;
+    background: rgb(40,219,219);
+  }
+
   .container1{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    position: fixed;
     background-image: url('/static/mbg.jpeg');    
     background-repeat: no-repeat;
     background-size: cover;
@@ -191,9 +206,7 @@ td {
   
   }
   
-  .contain{
-    height: 100vh;
-  }
+
 
   .head{
     font-family: 'Ara Aqeeq';
