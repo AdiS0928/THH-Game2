@@ -50,7 +50,7 @@ app.post("/game",(req,res) =>{
     Admin.find({}, function(err, admin) {
         console.log(admin);
 
-        time = admin[0].Time;
+        // time = admin[0].Time;
         const NameData = new Movie({User:req.body.Name,Score:0});
     console.log(req.body);
     NameData.save().then((movie) => {
